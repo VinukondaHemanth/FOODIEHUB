@@ -1,0 +1,858 @@
+@charset "UTF-8";
+/* =========================================================
+   FOODIEHUB
+   NAVBAR DESIGN
+   NEUMORPHIC FOOD UI
+   ========================================================= */
+
+
+/* =========================================================
+   1. NAVBAR
+   ========================================================= */
+
+.fh-navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background:
+        rgba(243, 238, 232, 0.94);
+
+    border-bottom:
+        1px solid
+        rgba(36, 27, 26, 0.07);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+
+/* =========================================================
+   2. NAVBAR CONTAINER
+   ========================================================= */
+
+.fh-navbar-container {
+
+    width:
+        min(
+            calc(100% - 40px),
+            1280px
+        );
+
+    min-height: 76px;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   3. LOGO
+   ========================================================= */
+
+.fh-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color:
+        var(--fh-text);
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+
+.fh-logo-mark {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    font-size: 18px;
+
+    box-shadow:
+        5px 5px 12px
+        rgba(154, 142, 137, 0.20),
+
+        -5px -5px 12px
+        rgba(255, 255, 255, 0.85);
+
+    transition:
+        transform
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition);
+}
+
+
+.fh-logo:hover .fh-logo-mark {
+
+    transform:
+        rotate(-5deg)
+        scale(1.04);
+
+    box-shadow:
+        7px 7px 15px
+        rgba(154, 142, 137, 0.23),
+
+        -7px -7px 15px
+        rgba(255, 255, 255, 0.90);
+}
+
+
+.fh-logo-text {
+
+    color:
+        var(--fh-text);
+}
+
+
+.fh-logo-text span {
+
+    color:
+        var(--fh-primary);
+}
+
+
+/* =========================================================
+   4. DESKTOP NAVIGATION
+   ========================================================= */
+
+.fh-nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-left: auto;
+}
+
+
+.fh-nav-link {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding:
+        9px 15px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        color
+        var(--fh-transition),
+
+        background
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition),
+
+        transform
+        var(--fh-transition);
+}
+
+
+.fh-nav-link:hover {
+
+    color:
+        var(--fh-primary);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.fh-nav-link.active {
+
+    color:
+        var(--fh-primary);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+}
+
+
+/* =========================================================
+   5. NAVBAR ACTIONS
+   ========================================================= */
+
+.fh-nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+/* =========================================================
+   6. ICON BUTTON
+   ========================================================= */
+
+.fh-nav-icon {
+
+    position: relative;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--fh-text);
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        var(--fh-border);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+
+    font-size: 17px;
+
+    transition:
+        transform
+        var(--fh-transition),
+
+        color
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition);
+}
+
+
+.fh-nav-icon:hover {
+
+    color:
+        var(--fh-primary);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        7px 7px 16px
+        rgba(154, 142, 137, 0.22),
+
+        -7px -7px 16px
+        rgba(255, 255, 255, 0.90);
+}
+
+
+.fh-nav-icon:active {
+
+    transform:
+        translateY(0);
+
+    box-shadow:
+        var(--fh-shadow-in);
+}
+
+
+/* =========================================================
+   7. CART COUNT
+   ========================================================= */
+
+.fh-cart-count {
+
+    position: absolute;
+
+    top: -3px;
+
+    right: -3px;
+
+    min-width: 18px;
+
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        0 4px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    border:
+        2px solid
+        var(--fh-bg);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   8. PROFILE BUTTON
+   ========================================================= */
+
+.fh-profile-button {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    border:
+        1px solid
+        var(--fh-primary);
+
+    box-shadow:
+        6px 6px 14px
+        rgba(217, 74, 43, 0.22),
+
+        -5px -5px 12px
+        rgba(255, 255, 255, 0.80);
+
+    font-size: 17px;
+
+    transition:
+        transform
+        var(--fh-transition),
+
+        background
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition);
+}
+
+
+.fh-profile-button:hover {
+
+    background:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.fh-profile-button:active {
+
+    transform:
+        translateY(0);
+
+    box-shadow:
+        var(--fh-shadow-in);
+}
+
+
+/* =========================================================
+   9. LOGIN BUTTON
+   ========================================================= */
+
+.fh-login-button {
+
+    min-height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        9px 19px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform
+        var(--fh-transition),
+
+        background
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition);
+}
+
+
+.fh-login-button:hover {
+
+    background:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        6px 6px 14px
+        rgba(217, 74, 43, 0.20),
+
+        -5px -5px 12px
+        rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   10. MOBILE MENU BUTTON
+   ========================================================= */
+
+.fh-mobile-toggle {
+
+    width: 44px;
+
+    height: 44px;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color:
+        var(--fh-text);
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        var(--fh-border);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+
+    font-size: 20px;
+
+    transition:
+        transform
+        var(--fh-transition),
+
+        box-shadow
+        var(--fh-transition),
+
+        color
+        var(--fh-transition);
+}
+
+
+.fh-mobile-toggle:hover {
+
+    color:
+        var(--fh-primary);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.fh-mobile-toggle:active {
+
+    box-shadow:
+        var(--fh-shadow-in);
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   11. MOBILE MENU
+   ========================================================= */
+
+.fh-mobile-menu {
+
+    display: none;
+
+    width:
+        min(
+            calc(100% - 28px),
+            1280px
+        );
+
+    margin:
+        0 auto 14px;
+
+    padding:
+        12px;
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        var(--fh-border);
+
+    border-radius:
+        var(--fh-radius-lg);
+
+    box-shadow:
+        var(--fh-shadow-out);
+}
+
+
+.fh-mobile-menu.open {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap: 6px;
+}
+
+
+.fh-mobile-menu .fh-nav-link {
+
+    width: 100%;
+
+    justify-content:
+        flex-start;
+
+    padding:
+        13px 16px;
+}
+
+
+/* =========================================================
+   12. MOBILE CART / PROFILE ACTIONS
+   ========================================================= */
+
+.fh-mobile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 4px 4px;
+}
+
+
+.fh-mobile-actions .fh-login-button {
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   13. NAVBAR RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .fh-navbar-container {
+
+        width:
+            calc(100% - 32px);
+
+        min-height:
+            70px;
+
+        gap: 15px;
+    }
+
+
+    .fh-nav-links {
+
+        display:
+            none;
+    }
+
+
+    .fh-mobile-toggle {
+
+        display:
+            flex;
+    }
+
+
+    .fh-nav-actions {
+
+        margin-left:
+            auto;
+    }
+}
+
+
+/* =========================================================
+   14. TABLET
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .fh-navbar-container {
+
+        width:
+            calc(100% - 24px);
+
+        min-height:
+            66px;
+    }
+
+
+    .fh-logo {
+
+        font-size:
+            20px;
+
+        gap:
+            8px;
+    }
+
+
+    .fh-logo-mark {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+        border-radius:
+            11px;
+
+        font-size:
+            16px;
+    }
+
+
+    .fh-nav-icon,
+    .fh-profile-button,
+    .fh-mobile-toggle {
+
+        width:
+            40px;
+
+        height:
+            40px;
+    }
+
+
+    .fh-login-button {
+
+        min-height:
+            40px;
+
+        padding:
+            8px 14px;
+
+        font-size:
+            11px;
+    }
+}
+
+
+/* =========================================================
+   15. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .fh-navbar-container {
+
+        width:
+            calc(100% - 18px);
+    }
+
+
+    .fh-logo-text {
+
+        display:
+            none;
+    }
+
+
+    .fh-logo-mark {
+
+        width:
+            39px;
+
+        height:
+            39px;
+    }
+
+
+    .fh-nav-actions {
+
+        gap:
+            6px;
+    }
+
+
+    .fh-nav-icon,
+    .fh-profile-button,
+    .fh-mobile-toggle {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            15px;
+    }
+
+
+    .fh-login-button {
+
+        padding:
+            8px 12px;
+    }
+}
+
+
+/* =========================================================
+   16. VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 340px) {
+
+    .fh-nav-icon {
+
+        display:
+            none;
+    }
+
+
+    .fh-mobile-toggle {
+
+        display:
+            flex;
+    }
+}
+
+
+/* =========================================================
+   17. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fh-navbar *,
+    .fh-navbar *::before,
+    .fh-navbar *::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+    }
+}

@@ -1,0 +1,1011 @@
+@charset "UTF-8";
+/* =========================================================
+   FOODIEHUB
+   GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+
+    /* ---------- Main Colors ---------- */
+
+    --fh-bg: #f3eee8;
+
+    --fh-surface: #f3eee8;
+
+    --fh-surface-light: #fffaf5;
+
+    --fh-primary: #d94a2b;
+
+    --fh-primary-dark: #b93820;
+
+    --fh-secondary: #f27a3d;
+
+    --fh-accent: #e85d35;
+
+    --fh-text: #241b1a;
+
+    --fh-text-secondary: #776b67;
+
+    --fh-text-light: #9a8e89;
+
+    --fh-white: #ffffff;
+
+    --fh-black: #000000;
+
+    --fh-success: #3a9d70;
+
+    --fh-danger: #c9342d;
+
+
+    /* ---------- Borders ---------- */
+
+    --fh-border: rgba(36, 27, 26, 0.08);
+
+    --fh-border-strong: rgba(36, 27, 26, 0.15);
+
+
+    /* ---------- Neumorphic Shadows ---------- */
+
+    --fh-shadow-out:
+
+        10px 10px 24px
+        rgba(154, 142, 137, 0.22),
+
+        -10px -10px 24px
+        rgba(255, 255, 255, 0.90);
+
+
+    --fh-shadow-out-small:
+
+        6px 6px 14px
+        rgba(154, 142, 137, 0.18),
+
+        -6px -6px 14px
+        rgba(255, 255, 255, 0.85);
+
+
+    --fh-shadow-in:
+
+        inset 5px 5px 12px
+        rgba(154, 142, 137, 0.18),
+
+        inset -5px -5px 12px
+        rgba(255, 255, 255, 0.85);
+
+
+    /* ---------- Radius ---------- */
+
+    --fh-radius-sm: 10px;
+
+    --fh-radius-md: 16px;
+
+    --fh-radius-lg: 22px;
+
+    --fh-radius-xl: 30px;
+
+    --fh-radius-pill: 999px;
+
+
+    /* ---------- Spacing ---------- */
+
+    --fh-space-1: 4px;
+
+    --fh-space-2: 8px;
+
+    --fh-space-3: 12px;
+
+    --fh-space-4: 16px;
+
+    --fh-space-5: 20px;
+
+    --fh-space-6: 24px;
+
+    --fh-space-7: 32px;
+
+    --fh-space-8: 40px;
+
+    --fh-space-9: 48px;
+
+    --fh-space-10: 64px;
+
+    --fh-space-11: 80px;
+
+
+    /* ---------- Layout ---------- */
+
+    --fh-container: 1280px;
+
+    --fh-content: 1100px;
+
+
+    /* ---------- Typography ---------- */
+
+    --fh-font:
+
+        "Manrope",
+        "Inter",
+        Arial,
+        sans-serif;
+
+
+    /* ---------- Transition ---------- */
+
+    --fh-transition:
+
+        0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    font-family:
+        var(--fh-font);
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color:
+        var(--fh-text);
+
+    background:
+        var(--fh-bg);
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+}
+
+
+button,
+input,
+textarea,
+select {
+
+    font: inherit;
+}
+
+
+button {
+
+    border: 0;
+
+    cursor: pointer;
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+ul,
+ol {
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   3. COMMON CONTAINER
+   ========================================================= */
+
+.fh-container {
+
+    width: min(
+        100% - 40px,
+        var(--fh-container)
+    );
+
+    margin-inline: auto;
+}
+
+
+.fh-content {
+
+    width: min(
+        100% - 40px,
+        var(--fh-content)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================================
+   4. SECTION SPACING
+   ========================================================= */
+
+.fh-section {
+
+    padding:
+        var(--fh-space-10) 0;
+}
+
+
+.fh-section-small {
+
+    padding:
+        var(--fh-space-8) 0;
+}
+
+
+.fh-section-large {
+
+    padding:
+        var(--fh-space-11) 0;
+}
+
+
+/* =========================================================
+   5. TYPOGRAPHY
+   ========================================================= */
+
+.fh-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--fh-primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+
+.fh-title {
+
+    color:
+        var(--fh-text);
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            76px
+        );
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    line-height: 0.95;
+}
+
+
+.fh-heading {
+
+    color:
+        var(--fh-text);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            46px
+        );
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1;
+}
+
+
+.fh-subheading {
+
+    color:
+        var(--fh-text);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+.fh-text {
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.fh-small-text {
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   6. NEUMORPHIC SURFACE
+   ========================================================= */
+
+.fh-neu {
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out);
+}
+
+
+.fh-neu-small {
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+}
+
+
+.fh-neu-inset {
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-in);
+}
+
+
+/* =========================================================
+   7. COMMON CARD
+   ========================================================= */
+
+.fh-card {
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        var(--fh-border);
+
+    border-radius:
+        var(--fh-radius-lg);
+
+    box-shadow:
+        var(--fh-shadow-out);
+
+    padding:
+        var(--fh-space-6);
+
+    transition:
+        transform var(--fh-transition),
+        box-shadow var(--fh-transition);
+}
+
+
+.fh-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        12px 12px 28px
+        rgba(154, 142, 137, 0.25),
+
+        -12px -12px 28px
+        rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================================================
+   8. BUTTON SYSTEM
+   ========================================================= */
+
+.fh-btn {
+
+    min-height: 48px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: .2px;
+
+    transition:
+        transform var(--fh-transition),
+        box-shadow var(--fh-transition),
+        background var(--fh-transition),
+        color var(--fh-transition);
+}
+
+
+/* ---------- Primary ---------- */
+
+.fh-btn-primary {
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    box-shadow:
+        6px 6px 14px
+        rgba(217, 74, 43, 0.28),
+
+        -5px -5px 12px
+        rgba(255, 255, 255, 0.75);
+}
+
+
+.fh-btn-primary:hover {
+
+    background:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.fh-btn-primary:active {
+
+    transform:
+        translateY(1px);
+
+    box-shadow:
+        inset 4px 4px 8px
+        rgba(130, 35, 20, 0.25);
+}
+
+
+/* ---------- Secondary ---------- */
+
+.fh-btn-secondary {
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-secondary);
+
+    box-shadow:
+        6px 6px 14px
+        rgba(242, 122, 61, 0.22),
+
+        -5px -5px 12px
+        rgba(255, 255, 255, 0.75);
+}
+
+
+.fh-btn-secondary:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        var(--fh-accent);
+}
+
+
+/* ---------- Soft ---------- */
+
+.fh-btn-soft {
+
+    color:
+        var(--fh-primary);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+}
+
+
+.fh-btn-soft:hover {
+
+    color:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ---------- Ghost ---------- */
+
+.fh-btn-ghost {
+
+    color:
+        var(--fh-text);
+
+    background:
+        transparent;
+
+    border:
+        1px solid
+        var(--fh-border-strong);
+}
+
+
+.fh-btn-ghost:hover {
+
+    color:
+        var(--fh-primary);
+
+    border-color:
+        var(--fh-primary);
+}
+
+
+/* =========================================================
+   9. INPUT SYSTEM
+   ========================================================= */
+
+.fh-input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.fh-label {
+
+    color:
+        var(--fh-text);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .3px;
+}
+
+
+.fh-input {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+        13px 16px;
+
+    color:
+        var(--fh-text);
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    outline: none;
+
+    box-shadow:
+        var(--fh-shadow-in);
+
+    transition:
+        border-color var(--fh-transition),
+        box-shadow var(--fh-transition);
+}
+
+
+.fh-input::placeholder {
+
+    color:
+        var(--fh-text-light);
+}
+
+
+.fh-input:focus {
+
+    border-color:
+        rgba(217, 74, 43, 0.45);
+
+    box-shadow:
+        inset 3px 3px 8px
+        rgba(154, 142, 137, 0.16),
+
+        inset -3px -3px 8px
+        rgba(255, 255, 255, 0.8),
+
+        0 0 0 3px
+        rgba(217, 74, 43, 0.08);
+}
+
+
+textarea.fh-input {
+
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   10. PILL / BADGE
+   ========================================================= */
+
+.fh-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 32px;
+
+    padding:
+        6px 13px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    background:
+        var(--fh-surface);
+
+    color:
+        var(--fh-text-secondary);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+}
+
+
+.fh-pill.active {
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+}
+
+
+/* =========================================================
+   11. DIVIDER
+   ========================================================= */
+
+.fh-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        var(--fh-border);
+}
+
+
+/* =========================================================
+   12. FLEX UTILITIES
+   ========================================================= */
+
+.fh-flex {
+
+    display: flex;
+}
+
+
+.fh-flex-center {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.fh-flex-between {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.fh-flex-column {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   13. GAP UTILITIES
+   ========================================================= */
+
+.fh-gap-1 {
+
+    gap: var(--fh-space-1);
+}
+
+
+.fh-gap-2 {
+
+    gap: var(--fh-space-2);
+}
+
+
+.fh-gap-3 {
+
+    gap: var(--fh-space-3);
+}
+
+
+.fh-gap-4 {
+
+    gap: var(--fh-space-4);
+}
+
+
+.fh-gap-5 {
+
+    gap: var(--fh-space-5);
+}
+
+
+.fh-gap-6 {
+
+    gap: var(--fh-space-6);
+}
+
+
+.fh-gap-7 {
+
+    gap: var(--fh-space-7);
+}
+
+
+/* =========================================================
+   14. TEXT COLORS
+   ========================================================= */
+
+.fh-text-primary {
+
+    color:
+        var(--fh-primary);
+}
+
+
+.fh-text-secondary {
+
+    color:
+        var(--fh-text-secondary);
+}
+
+
+.fh-text-success {
+
+    color:
+        var(--fh-success);
+}
+
+
+.fh-text-danger {
+
+    color:
+        var(--fh-danger);
+}
+
+
+/* =========================================================
+   15. VISIBILITY
+   ========================================================= */
+
+.fh-hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   16. FOCUS ACCESSIBILITY
+   ========================================================= */
+
+:focus-visible {
+
+    outline:
+        3px solid
+        rgba(217, 74, 43, 0.35);
+
+    outline-offset:
+        3px;
+}
+
+
+/* =========================================================
+   17. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .fh-container,
+    .fh-content {
+
+        width:
+            min(
+                100% - 32px,
+                100%
+            );
+    }
+
+
+    .fh-section {
+
+        padding:
+            52px 0;
+    }
+
+
+    .fh-section-large {
+
+        padding:
+            64px 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .fh-container,
+    .fh-content {
+
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .fh-section {
+
+        padding:
+            40px 0;
+    }
+
+
+    .fh-section-small {
+
+        padding:
+            32px 0;
+    }
+
+
+    .fh-title {
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .fh-card {
+
+        padding:
+            var(--fh-space-5);
+
+        border-radius:
+            var(--fh-radius-md);
+    }
+
+
+    .fh-btn {
+
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   18. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}

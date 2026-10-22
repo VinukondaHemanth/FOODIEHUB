@@ -1,0 +1,690 @@
+@charset "UTF-8";
+/* =========================================================
+   FOODIEHUB
+   CHECKOUT PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.checkout-page {
+
+    min-height:
+        100vh;
+
+    padding:
+        55px 0 80px;
+
+    background:
+        var(--fh-bg);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.checkout-container {
+
+    width:
+        min(
+            calc(100% - 40px),
+            1150px
+        );
+
+    margin:
+        0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.checkout-header {
+
+    margin-bottom:
+        30px;
+}
+
+
+.checkout-eyebrow {
+
+    margin-bottom:
+        12px;
+}
+
+
+.checkout-title {
+
+    font-size:
+        clamp(
+            44px,
+            7vw,
+            74px
+        );
+
+    line-height:
+        .9;
+
+    letter-spacing:
+        -4px;
+
+    font-weight:
+        800;
+}
+
+
+.checkout-title span {
+
+    color:
+        var(--fh-primary);
+}
+
+
+.checkout-subtitle {
+
+    margin-top:
+        10px;
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.checkout-layout {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 350px;
+
+    align-items:
+        start;
+
+    gap:
+        24px;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.checkout-form-card {
+
+    padding:
+        28px;
+
+    background:
+        var(--fh-surface);
+
+    border-radius:
+        var(--fh-radius-lg);
+
+    box-shadow:
+        var(--fh-shadow-out);
+}
+
+
+.checkout-card-title {
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        22px;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.checkout-form {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        17px;
+}
+
+
+.checkout-form-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        14px;
+}
+
+
+.checkout-form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+}
+
+
+.checkout-form-group label {
+
+    color:
+        var(--fh-text);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+.checkout-form-group input,
+.checkout-form-group textarea,
+.checkout-form-group select {
+
+    width:
+        100%;
+
+    min-height:
+        49px;
+
+    padding:
+        12px 15px;
+
+    border:
+        0;
+
+    outline:
+        none;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        var(--fh-surface);
+
+    color:
+        var(--fh-text);
+
+    box-shadow:
+        var(--fh-shadow-in);
+
+    font-size:
+        13px;
+
+    transition:
+        box-shadow .2s ease;
+}
+
+
+.checkout-form-group textarea {
+
+    min-height:
+        100px;
+
+    resize:
+        vertical;
+}
+
+
+.checkout-form-group input:focus,
+.checkout-form-group textarea:focus,
+.checkout-form-group select:focus {
+
+    box-shadow:
+        inset 3px 3px 8px
+        rgba(154, 142, 137, .15),
+
+        inset -3px -3px 8px
+        rgba(255, 255, 255, .8),
+
+        0 0 0 3px
+        rgba(217, 74, 43, .08);
+}
+
+
+/* =========================================================
+   PAYMENT
+   ========================================================= */
+
+.payment-section {
+
+    margin-top:
+        8px;
+}
+
+
+.payment-title {
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--fh-text);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+}
+
+
+.payment-options {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+}
+
+
+.payment-option {
+
+    position:
+        relative;
+}
+
+
+.payment-option input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+}
+
+
+.payment-option label {
+
+    min-height:
+        60px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        12px 15px;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        var(--fh-surface);
+
+    border:
+        1px solid
+        var(--fh-border);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.payment-option label::before {
+
+    content:
+        "";
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        50%;
+
+    border:
+        2px solid
+        var(--fh-text-light);
+}
+
+
+.payment-option input:checked + label {
+
+    color:
+        var(--fh-primary);
+
+    border-color:
+        var(--fh-primary);
+
+    box-shadow:
+        var(--fh-shadow-in);
+}
+
+
+.payment-option input:checked + label::before {
+
+    border:
+        5px solid
+        var(--fh-primary);
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.checkout-submit {
+
+    width:
+        100%;
+
+    min-height:
+        54px;
+
+    margin-top:
+        8px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .4px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+
+.checkout-submit:hover {
+
+    background:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+   ========================================================= */
+
+.checkout-summary {
+
+    position:
+        sticky;
+
+    top:
+        100px;
+
+    padding:
+        25px;
+
+    border-radius:
+        var(--fh-radius-lg);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out);
+}
+
+
+.checkout-summary-title {
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        21px;
+
+    font-weight:
+        800;
+}
+
+
+.checkout-summary-row {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    padding:
+        9px 0;
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        12px;
+}
+
+
+.checkout-summary-row strong {
+
+    color:
+        var(--fh-text);
+}
+
+
+.checkout-summary-divider {
+
+    height:
+        1px;
+
+    margin:
+        12px 0;
+
+    background:
+        var(--fh-border);
+}
+
+
+.checkout-summary-total {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding-top:
+        10px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        800;
+}
+
+
+.checkout-summary-total span:last-child {
+
+    color:
+        var(--fh-primary);
+
+    font-size:
+        23px;
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.checkout-security {
+
+    margin-top:
+        16px;
+
+    padding:
+        12px;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        rgba(58, 157, 112, .08);
+
+    color:
+        var(--fh-success);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.5;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .checkout-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .checkout-summary {
+
+        position:
+            static;
+
+        order:
+            -1;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .checkout-page {
+
+        padding:
+            40px 0 60px;
+    }
+
+
+    .checkout-container {
+
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .checkout-title {
+
+        font-size:
+            49px;
+    }
+
+
+    .checkout-form-card {
+
+        padding:
+            21px;
+    }
+
+
+    .checkout-form-row {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .payment-options {
+
+        grid-template-columns:
+            1fr;
+    }
+}

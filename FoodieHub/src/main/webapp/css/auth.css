@@ -1,0 +1,687 @@
+@charset "UTF-8";
+/* =========================================================
+   FOODIEHUB
+   LOGIN + SIGNUP
+   AUTHENTICATION DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   AUTH PAGE
+   ========================================================= */
+
+.auth-page {
+
+    min-height:
+        calc(100vh - 76px);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        60px 20px;
+
+    background:
+        var(--fh-bg);
+
+    overflow:
+        hidden;
+
+    position:
+        relative;
+}
+
+
+/* =========================================================
+   BACKGROUND SHAPES
+   ========================================================= */
+
+.auth-page::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        380px;
+
+    height:
+        380px;
+
+    left:
+        -170px;
+
+    top:
+        10%;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out);
+
+    opacity:
+        .8;
+}
+
+
+.auth-page::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    right:
+        -130px;
+
+    bottom:
+        8%;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out);
+
+    opacity:
+        .8;
+}
+
+
+/* =========================================================
+   AUTH CONTAINER
+   ========================================================= */
+
+.auth-container {
+
+    width:
+        min(
+            100%,
+            460px
+        );
+
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+/* =========================================================
+   AUTH CARD
+   ========================================================= */
+
+.auth-card {
+
+    padding:
+        35px;
+
+    border-radius:
+        var(--fh-radius-xl);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out);
+}
+
+
+/* =========================================================
+   AUTH ICON
+   ========================================================= */
+
+.auth-icon {
+
+    width:
+        74px;
+
+    height:
+        74px;
+
+    margin:
+        0 auto 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    box-shadow:
+        7px 7px 15px
+        rgba(217, 74, 43, .20),
+
+        -7px -7px 15px
+        rgba(255, 255, 255, .9);
+
+    font-size:
+        28px;
+}
+
+
+/* =========================================================
+   AUTH HEADER
+   ========================================================= */
+
+.auth-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        28px;
+}
+
+
+.auth-eyebrow {
+
+    margin-bottom:
+        10px;
+}
+
+
+.auth-title {
+
+    font-size:
+        38px;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -2px;
+
+    font-weight:
+        800;
+}
+
+
+.auth-title span {
+
+    color:
+        var(--fh-primary);
+}
+
+
+.auth-description {
+
+    margin-top:
+        9px;
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.auth-form {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        16px;
+}
+
+
+.auth-field {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+
+    position:
+        relative;
+}
+
+
+.auth-field label {
+
+    color:
+        var(--fh-text);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+}
+
+
+.auth-field input {
+
+    width:
+        100%;
+
+    min-height:
+        51px;
+
+    padding:
+        13px 15px;
+
+    border:
+        0;
+
+    outline:
+        none;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        var(--fh-surface);
+
+    color:
+        var(--fh-text);
+
+    box-shadow:
+        var(--fh-shadow-in);
+
+    font-size:
+        13px;
+}
+
+
+.auth-field input:focus {
+
+    box-shadow:
+        inset 3px 3px 8px
+        rgba(154, 142, 137, .16),
+
+        inset -3px -3px 8px
+        rgba(255, 255, 255, .85),
+
+        0 0 0 3px
+        rgba(217, 74, 43, .08);
+}
+
+
+/* =========================================================
+   PASSWORD WRAPPER
+   ========================================================= */
+
+.password-wrapper {
+
+    position:
+        relative;
+}
+
+
+.password-wrapper input {
+
+    padding-right:
+        48px;
+}
+
+
+.password-toggle {
+
+    position:
+        absolute;
+
+    right:
+        8px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        transparent;
+
+    color:
+        var(--fh-text-light);
+
+    font-size:
+        15px;
+}
+
+
+.password-toggle:hover {
+
+    color:
+        var(--fh-primary);
+
+    background:
+        var(--fh-surface);
+
+    box-shadow:
+        var(--fh-shadow-out-small);
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.auth-error {
+
+    padding:
+        11px 14px;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        rgba(201, 52, 45, .08);
+
+    border:
+        1px solid
+        rgba(201, 52, 45, .15);
+
+    color:
+        var(--fh-danger);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.auth-success {
+
+    padding:
+        11px 14px;
+
+    border-radius:
+        var(--fh-radius-md);
+
+    background:
+        rgba(58, 157, 112, .08);
+
+    border:
+        1px solid
+        rgba(58, 157, 112, .15);
+
+    color:
+        var(--fh-success);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.auth-submit {
+
+    width:
+        100%;
+
+    min-height:
+        53px;
+
+    margin-top:
+        3px;
+
+    border-radius:
+        var(--fh-radius-pill);
+
+    color:
+        var(--fh-white);
+
+    background:
+        var(--fh-primary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .4px;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+
+.auth-submit:hover {
+
+    background:
+        var(--fh-primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   AUTH FOOTER
+   ========================================================= */
+
+.auth-footer {
+
+    margin-top:
+        23px;
+
+    text-align:
+        center;
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        12px;
+}
+
+
+.auth-footer a {
+
+    color:
+        var(--fh-primary);
+
+    font-weight:
+        800;
+}
+
+
+.auth-footer a:hover {
+
+    text-decoration:
+        underline;
+}
+
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.auth-back {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-top:
+        14px;
+
+    color:
+        var(--fh-text-secondary);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+.auth-back:hover {
+
+    color:
+        var(--fh-primary);
+}
+
+
+/* =========================================================
+   SIGNUP EXTRA
+   ========================================================= */
+
+.signup-card {
+
+    max-width:
+        600px;
+
+    margin:
+        0 auto;
+}
+
+
+.signup-form-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        14px;
+}
+
+
+.signup-form-grid .full {
+
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .auth-page {
+
+        padding:
+            40px 14px;
+    }
+
+
+    .auth-card {
+
+        padding:
+            27px 20px;
+
+        border-radius:
+            var(--fh-radius-lg);
+    }
+
+
+    .auth-title {
+
+        font-size:
+            32px;
+    }
+
+
+    .signup-form-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .signup-form-grid .full {
+
+        grid-column:
+            auto;
+    }
+}
